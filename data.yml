@@ -1,4 +1,4 @@
-Prefixes:
+Before:
 - Master
 - Super
 - Ultra
@@ -10,7 +10,7 @@ Prefixes:
 - Responsive
 - Les
 
-Suffixes:
+After:
 - on Rails
 - the Videogame
 - With Friends
@@ -45,7 +45,9 @@ Suffixes:
 - Online
 - Premium
 
-Extensions:
+Prefix:
+
+Suffix:
 - .js
 - .ly
 - .min

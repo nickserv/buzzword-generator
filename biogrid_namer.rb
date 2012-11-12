@@ -3,13 +3,15 @@ require 'yaml'
 $data = YAML.load_file 'data.yml'
 
 def decorate string
-	case [:prefix, :suffix, :extension].sample
+	case [:before, :after, :prefix, :suffix].sample
+	when :before
+		$data['Before'].sample.to_s << ' ' << string
+	when :after
+		string << ' ' << $data['After'].sample.to_s
 	when :prefix
-		$data['Prefixes'].sample.to_s << ' ' << string
+		string << $data['Prefix'].sample.to_s
 	when :suffix
-		string << ' ' << $data['Suffixes'].sample.to_s
-	when :extension
-		string << $data['Extensions'].sample.to_s
+		$data['Suffix'].sample.to_s << string
 	end
 end
 

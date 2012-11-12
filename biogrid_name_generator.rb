@@ -1,6 +1,6 @@
 $prefixes = ['Super', 'Ultra', 'Mega']
-$suffixes = ['on Rails', 'the Videogame', 'With Friends', '2.0', 'Free ', 'Pro', 'Episode 1', 'Land', 'Deluxe', 'Light', 'Lite', 'LE']
-$extensions = ['.js', '.ly', 'Ville']
+$suffixes = ['on Rails', 'the Videogame', 'With Friends', '2.0', 'Free ', 'Pro', 'Episode 1', 'Land', 'Deluxe', 'Light', 'Lite', 'LE', 'in Space']
+$extensions = ['.js', '.ly', 'Ville', '/r/cats']
 
 def decorate string
 	case [:prefix, :suffix, :extension].sample

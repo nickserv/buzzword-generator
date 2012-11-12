@@ -48,10 +48,10 @@ After:
 - Premium
 - World
 
-Prefix:
+Prefixes:
 - i
 
-Suffix:
+Suffixes:
 - .js
 - .ly
 - .min

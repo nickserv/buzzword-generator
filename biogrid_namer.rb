@@ -9,9 +9,9 @@ def decorate string
 	when :after
 		string << ' ' << $data['After'].sample.to_s
 	when :prefix
-		$data['Prefix'].sample.to_s << string
+		$data['Prefixes'].sample.to_s << string
 	when :suffix
-		string << $data['Suffix'].sample.to_s
+		string << $data['Suffixes'].sample.to_s
 	end
 end
 

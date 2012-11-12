@@ -1,15 +1,15 @@
-$prefixes = ['Super', 'Ultra', 'Mega']
-$suffixes = ['on Rails', 'the Videogame', 'With Friends', '2.0', 'Free ', 'Pro', 'Episode 1', 'Land', 'Deluxe', 'Light', 'Lite', 'LE', 'in Space']
-$extensions = ['.js', '.ly', 'Ville', '/r/cats']
+require 'yaml'
+
+$data = YAML.load_file 'data.yml'
 
 def decorate string
 	case [:prefix, :suffix, :extension].sample
 	when :prefix
-		$prefixes.sample << ' ' << string
+		$data['Prefixes'].sample.to_s << ' ' << string
 	when :suffix
-		string << ' ' << $suffixes.sample
+		string << ' ' << $data['Suffixes'].sample.to_s
 	when :extension
-		string << $extensions.sample
+		string << $data['Extensions'].sample.to_s
 	end
 end
 

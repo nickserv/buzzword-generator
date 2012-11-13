@@ -1,5 +1,3 @@
-var data = load_file('data.yml');
-
 function randomNumber(max) {
 	return Math.floor(Math.random()*max);
 }
@@ -9,7 +7,7 @@ Array.prototype.random=function() {
 	return this[i];
 }
 
-function decorate(string) {
+function decorate(data, string) {
 	var modes = ['before', 'after', 'prefix', 'suffix'];
 	switch(modes.random()) {
 		case 'before':
@@ -23,14 +21,16 @@ function decorate(string) {
 	}
 }
 
-function swaggify(string, probability) {
+function swaggify(data, string, probability) {
 	if(!probability) {
 		probability = 1;
 	}
 	if(randomNumber(probability) === 0) {
-		string = swaggify(decorate(string), probability+1);
+		string = swaggify(data, decorate(data, string), probability+1);
 	}
 	return string;
 }
 
-document.write(swaggify('BioGrid'));
+$.getJSON('data.json', function(data) {
+	document.write(swaggify(data, 'BioGrid'));
+});

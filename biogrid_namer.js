@@ -4,17 +4,22 @@ function randomNumber(max) {
 	return Math.floor(Math.random()*max);
 }
 
+Array.prototype.random=function() {
+	var i = randomNumber(this.length);
+	return this[i];
+}
+
 function decorate(string) {
 	var modes = ['before', 'after', 'prefix', 'suffix'];
-	switch(modes.getRandom()) {
+	switch(modes.random()) {
 		case 'before':
-			return data.before.getRandom() + ' ' + string;
+			return data.before.random() + ' ' + string;
 		case 'after':
-			return string + ' ' + data.after.getRandom();
+			return string + ' ' + data.after.random();
 		case 'prefix':
-			return data.prefixes.getRandom() + string;
+			return data.prefixes.random() + string;
 		case 'suffix':
-			return string + data.suffixes.getRandom();
+			return string + data.suffixes.random();
 	}
 }
 

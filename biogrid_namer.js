@@ -1,15 +1,15 @@
-var data = load_file("data.yml");
+var data = load_file('data.yml');
 
 function decorate(string) {
-	var modes = ["before", "after", "prefix", "suffix"];
+	var modes = ['before', 'after', 'prefix', 'suffix'];
 	switch(modes.getRandom()) {
-		case "before":
+		case 'before':
 			return data.before.getRandom() + ' ' + string;
-		case "after":
+		case 'after':
 			return string + ' ' + data.after.getRandom();
-		case "prefix":
+		case 'prefix':
 			return data.prefixes.getRandom() + string;
-		case "suffix":
+		case 'suffix':
 			return string + data.suffixes.getRandom();
 	}
 }

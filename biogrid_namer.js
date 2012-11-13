@@ -1,26 +1,29 @@
-require 'yaml'
+var data = load_file("data.yml");
 
-$data = YAML.load_file 'data.yml'
+function decorate(string) {
+	var modes = ["before", "after", "prefix", "suffix"];
+	switch(modes.getRandom()) {
+		case "before":
+			return data.before.getRandom() + ' ' + string;
+		case "after":
+			return string + ' ' + data.after.getRandom();
+		case "prefix":
+			return data.prefixes.getRandom() + string;
+		case "suffix":
+			return string + data.suffixes.getRandom();
+	}
+}
 
-def decorate string
-	case [:before, :after, :prefix, :suffix].sample
-	when :before
-		$data['Before'].sample.to_s << ' ' << string
-	when :after
-		string << ' ' << $data['After'].sample.to_s
-	when :prefix
-		$data['Prefixes'].sample.to_s << string
-	when :suffix
-		string << $data['Suffixes'].sample.to_s
-	end
-end
+function swaggify(string, probability) {
+	if(!probability) {
+		probability = 1;
+	}
+	if(rand(probability) === 0) {
+		return swaggify(decorate(string), probability+1);
+	}
+	else {
+		return string;
+	}
+}
 
-def swaggify(string, probability=1)
-	if rand(probability) == 0
-		swaggify(decorate(string), probability+1)
-	else
-		string
-	end
-end
-
-puts swaggify 'BioGrid'
+document.write(swaggify('BioGrid'));

@@ -5,7 +5,7 @@ function randomNumber(max) {
 Array.prototype.random=function() {
 	var i = randomNumber(this.length);
 	return this[i];
-}
+};
 
 function decorate(data, string) {
 	var modes = ['before', 'after', 'prefix', 'suffix'];

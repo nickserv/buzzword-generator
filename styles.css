@@ -1,0 +1,16 @@
+body {
+	font-family: Arial, sans-serif;
+	text-align: center;
+	margin-top: 50px;
+}
+
+#title {
+	font-weight: bold;
+	font-size: 48px;
+}
+
+#more-button {
+	font-size: 36px;
+	padding: 10px;
+	margin: 20px;
+}

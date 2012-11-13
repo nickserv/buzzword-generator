@@ -1,5 +1,5 @@
 {
-  "Before": [
+  "before": [
     "Master",
     "Super",
     "Ultra",
@@ -13,7 +13,7 @@
     "Auto",
     "New"
   ],
-  "After": [
+  "after": [
     "on Rails",
     "the Videogame",
     "With Friends",
@@ -49,10 +49,10 @@
     "Premium",
     "World"
   ],
-  "Prefixes": [
+  "prefixes": [
     "i"
   ],
-  "Suffixes": [
+  "suffixes": [
     ".js",
     ".ly",
     ".min",

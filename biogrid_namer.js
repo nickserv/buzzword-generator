@@ -32,5 +32,5 @@ function swaggify(data, string, probability) {
 }
 
 $.getJSON('data.json', function(data) {
-	document.write(swaggify(data, 'BioGrid'));
+	$("#title").html(swaggify(data, 'BioGrid'));
 });

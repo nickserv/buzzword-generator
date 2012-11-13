@@ -31,6 +31,16 @@ function swaggify(data, string, probability) {
 	return string;
 }
 
-$.getJSON('data.json', function(data) {
-	$("#title").html(swaggify(data, 'BioGrid'));
+function generate() {
+	$.getJSON('data.json', function(data) {
+		$("#title").html(swaggify(data, 'BioGrid'));
+	});
+}
+
+$(document).ready(function() {
+	generate();
+});
+
+$('#more-button').click(function() {
+	generate();
 });

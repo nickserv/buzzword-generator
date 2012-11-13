@@ -1,5 +1,9 @@
 var data = load_file('data.yml');
 
+function randomNumber(max) {
+	return Math.floor(Math.random()*max);
+}
+
 function decorate(string) {
 	var modes = ['before', 'after', 'prefix', 'suffix'];
 	switch(modes.getRandom()) {
@@ -18,12 +22,10 @@ function swaggify(string, probability) {
 	if(!probability) {
 		probability = 1;
 	}
-	if(rand(probability) === 0) {
-		return swaggify(decorate(string), probability+1);
+	if(randomNumber(probability) === 0) {
+		string = swaggify(decorate(string), probability+1);
 	}
-	else {
-		return string;
-	}
+	return string;
 }
 
 document.write(swaggify('BioGrid'));

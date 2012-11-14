@@ -8,15 +8,15 @@ Array.prototype.random=function() {
 };
 
 function decorate(data, string) {
-	var modes = ['before', 'after', 'prefix', 'suffix'];
+	var modes = ['before', 'after', 'prefixes', 'suffixes'];
 	switch(modes.random()) {
 		case 'before':
 			return data.before.random() + ' ' + string;
 		case 'after':
 			return string + ' ' + data.after.random();
-		case 'prefix':
+		case 'prefixes':
 			return data.prefixes.random() + string;
-		case 'suffix':
+		case 'suffixes':
 			return string + data.suffixes.random();
 	}
 }

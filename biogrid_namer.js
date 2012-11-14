@@ -32,7 +32,7 @@ function swaggify(data, string, probability) {
 }
 
 function generate() {
-	$.getJSON('data.json', function(data) {
+	$.getJSON('modifiers.json', function(data) {
 		$("#title").html(swaggify(data, 'BioGrid'));
 	});
 }

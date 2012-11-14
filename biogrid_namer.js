@@ -7,17 +7,39 @@ Array.prototype.random=function() {
 	return this[i];
 };
 
+function Modifier(value, category) {
+	this.value = value;
+	this.category = category;
+	//console.log(value+","+category);
+}
+
+function loadModifiers(data) {
+	var modifiers = [];
+	var categories = ['before','after','prefixes','suffixes'];
+	for(i=0; i<4; i++) {
+		for(j=0; j<data[categories[i]].length; j++) {
+			var category = categories[i];
+			var modifier = new Modifier(data[category][j], category);
+			modifiers.push(modifier);
+		}
+	}
+	return modifiers;
+}
+
 function decorate(data, string) {
-	var modes = ['before', 'after', 'prefixes', 'suffixes'];
-	switch(modes.random()) {
+	// convert data to list of modifiers
+	modifiers = loadModifiers(data);
+	// get a random modifier
+	var modifier = modifiers.random();
+	switch(modifier.category) {
 		case 'before':
-			return data.before.random() + ' ' + string;
+			return modifier.value + ' ' + string;
 		case 'after':
-			return string + ' ' + data.after.random();
+			return string + ' ' + modifier.value;
 		case 'prefixes':
-			return data.prefixes.random() + string;
+			return modifier.value + string;
 		case 'suffixes':
-			return string + data.suffixes.random();
+			return string + modifier.value;
 	}
 }
 

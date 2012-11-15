@@ -26,10 +26,7 @@ function loadModifiers(data) {
 	return modifiers;
 }
 
-function decorate(data, string) {
-	// convert data to list of modifiers
-	modifiers = loadModifiers(data);
-	// get a random modifier
+function decorate(modifiers, string) {
 	var modifier = modifiers.random();
 	switch(modifier.category) {
 		case 'before':
@@ -43,26 +40,29 @@ function decorate(data, string) {
 	}
 }
 
-function swaggify(data, string, probability) {
+function swaggify(modifiers, string, probability) {
 	if(!probability) {
 		probability = 1;
 	}
 	if(randomNumber(probability) === 0) {
-		string = swaggify(data, decorate(data, string), probability+1);
+		string = swaggify(modifiers, decorate(modifiers, string), probability+1);
 	}
 	return string;
 }
 
-function generate() {
-	$.getJSON('modifiers.json', function(data) {
-		$('#title').html(swaggify(data, 'BioGrid'));
-	});
+function generate(modifiers) {
+	$('#title').html(swaggify(modifiers, 'BioGrid'));
 }
 
-$(document).ready(function() {
-	generate();
-});
+$.getJSON('modifiers.json', function(data) {
+	modifiers = loadModifiers(data);
 
-$('#more-button').click(function() {
-	generate();
+	$(document).ready(function() {
+		generate(modifiers);
+	});
+
+	$('#more-button').click(function() {
+		generate(modifiers);
+	});
+
 });

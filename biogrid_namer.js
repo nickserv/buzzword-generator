@@ -56,13 +56,8 @@ function generate(modifiers) {
 
 $.getJSON('modifiers.json', function(data) {
 	modifiers = loadModifiers(data);
+	generator_thing = function() { generate(modifiers); };
 
-	$(document).ready(function() {
-		generate(modifiers);
-	});
-
-	$('#more-button').click(function() {
-		generate(modifiers);
-	});
-
+	$(document).ready(generator_thing);
+	$('#more-button').click(generator_thing);
 });

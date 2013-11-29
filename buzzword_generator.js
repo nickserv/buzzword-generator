@@ -51,7 +51,7 @@ function swaggify(modifiers, string, probability) {
 }
 
 function generate(modifiers) {
-	$('#title').html(swaggify(modifiers, 'BioGrid'));
+	$('#title').html(swaggify(modifiers, 'Scrum'));
 }
 
 $.getJSON('modifiers.json', function(data) {

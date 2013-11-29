@@ -1,6 +1,6 @@
-# [biogrid-namer](http://thenickperson.github.com/biogrid-namer/)
+# [buzzword-generator](http://thenickperson.github.com/buzzword-generator/)
 
-[![Code Climate](https://codeclimate.com/github/thenickperson/biogrid-namer.png)](https://codeclimate.com/github/thenickperson/biogrid-namer)
+[![Code Climate](https://codeclimate.com/github/thenickperson/buzzword-generator.png)](https://codeclimate.com/github/thenickperson/buzzword-generator)
 
 ## About
 Produces amusing names for BioGrid, the next RapDev project for the <a

@@ -1,10 +1,10 @@
 lint: jslint csslint
 
 jslint:
-	jslint src/**/*.js --terse --indent=2 --nomen --plusplus
+	jslint *.js --terse --indent=2 --plusplus
 
 csslint:
-	csslint *.css --quiet --ignore=adjoining-classes
+	csslint *.css --quiet
 
 deploy:
 	git checkout gh-pages

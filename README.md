@@ -22,10 +22,10 @@ Modifier text is stored in `modifiers.json`. This JSON file holds four lists of
 modifiers, stored in a hash table. Here are brief descriptions of these four
 lists:
 - __before__: Text added to the start of the name, with a space in between.
-	- Example: Super BioGrid
+  - Example: Super BioGrid
 - __after__: Text added to the end of the name, with a space in between.
-	- Example: BioGrid the Videogame
+  - Example: BioGrid the Videogame
 - __prefixes__: Text added to the start of the name, without additional spaces.
-	- Example: iBioGrid
+  - Example: iBioGrid
 - __suffixes__: Text added to the end of the name, without additional spaces.
-	- Example: BioGrid.js
+  - Example: BioGrid.js

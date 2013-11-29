@@ -1,23 +1,23 @@
 body {
-	font-family: Arial, sans-serif;
-	text-align: center;
-	margin-top: 50px;
+  font-family: Arial, sans-serif;
+  text-align: center;
+  margin-top: 50px;
 }
 
 #title {
-	font-weight: bold;
-	font-size: 48px;
+  font-weight: bold;
+  font-size: 48px;
 }
 
 #more-button {
-	font-size: 36px;
-	padding: 10px;
-	margin: 20px;
+  font-size: 36px;
+  padding: 10px;
+  margin: 20px;
 }
 
 #github-banner {
-	position: absolute;
-	top: 0;
-	right: 0;
-	border: 0;
+  position: absolute;
+  top: 0;
+  right: 0;
+  border: 0;
 }

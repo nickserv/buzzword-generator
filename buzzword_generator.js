@@ -1,3 +1,5 @@
+"use strict";
+
 function randomNumber(max) {
   return Math.floor(Math.random()*max);
 }
@@ -14,12 +16,16 @@ function Modifier(value, category) {
 }
 
 function loadModifiers(data) {
-  var modifiers = [];
-  var categories = ['before','after','prefixes','suffixes'];
+  var categories = ['before','after','prefixes','suffixes'],
+      modifiers = [],
+      category,
+      modifier,
+      i,
+      j;
   for(i=0; i<4; i++) {
     for(j=0; j<data[categories[i]].length; j++) {
-      var category = categories[i];
-      var modifier = new Modifier(data[category][j], category);
+      category = categories[i];
+      modifier = new Modifier(data[category][j], category);
       modifiers.push(modifier);
     }
   }
@@ -55,8 +61,8 @@ function generate(modifiers) {
 }
 
 $.getJSON('modifiers.json', function(data) {
-  modifiers = loadModifiers(data);
-  generator_thing = function() { generate(modifiers); };
+  var modifiers = loadModifiers(data),
+      generator_thing = function() { generate(modifiers); };
 
   $(document).ready(generator_thing);
   $('#more-button').click(generator_thing);

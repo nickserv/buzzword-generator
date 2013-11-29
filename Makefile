@@ -1,7 +1,7 @@
 lint: jslint csslint
 
 jslint:
-	jslint *.js --terse --indent=2 --plusplus
+	jslint *.js --terse --browser --indent=2 --plusplus --predef $$
 
 csslint:
 	csslint *.css --quiet

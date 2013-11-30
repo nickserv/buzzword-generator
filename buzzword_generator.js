@@ -35,10 +35,10 @@ var Generator = {
     return Math.floor(Math.random() * max);
   },
 
-  swaggify: function (modifiers, string, probability) {
+  generate: function (modifiers, string, probability) {
     probability = probability || 1;
     if (Generator.randomNumber(probability) === 0) {
-      string = Generator.swaggify(modifiers, Generator.decorate(modifiers, string), probability + 1);
+      string = Generator.generate(modifiers, Generator.decorate(modifiers, string), probability + 1);
     }
     return string;
   }
@@ -47,10 +47,10 @@ var Generator = {
 $.getJSON('modifiers.json', function (data) {
   var modifiers = Config.convert(data);
 
-  function generate() {
-    $('.title').html(Generator.swaggify(modifiers, 'Scrum'));
+  function update() {
+    $('.title').html(Generator.generate(modifiers, 'Scrum'));
   }
 
-  $(document).ready(generate);
-  $('.more-button').click(generate);
+  $(document).ready(update);
+  $('.more-button').click(update);
 });

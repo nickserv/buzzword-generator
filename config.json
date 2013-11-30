@@ -1,6 +1,12 @@
 {
   "nouns": [
-    "Scrum"
+    "Scrum",
+    "Data",
+    "Agile",
+    "Risk",
+    "Startup",
+    "Hacker News",
+    "Venture Capital"
   ],
   "modifiers": {
     "before": [

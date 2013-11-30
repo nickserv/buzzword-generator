@@ -1,16 +1,7 @@
-body {
-  font-family: Arial, sans-serif;
+.container {
+  max-width: 768px;
+}
+
+.jumbotron {
   text-align: center;
-  margin-top: 50px;
-}
-
-.title {
-  font-weight: bold;
-  font-size: 48px;
-}
-
-.more-button {
-  font-size: 36px;
-  padding: 10px;
-  margin: 20px;
 }

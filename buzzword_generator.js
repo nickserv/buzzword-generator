@@ -9,19 +9,12 @@ Array.prototype.random = function () {
 };
 
 function loadModifiers(data) {
-  var categories = ['before', 'after', 'prefixes', 'suffixes'],
-    modifiers = [],
-    category,
-    modifier,
-    i,
-    j;
-  for (i = 0; i < 4; i++) {
-    for (j = 0; j < data[categories[i]].length; j++) {
-      category = categories[i];
-      modifier = { value: data[category][j], category: category };
-      modifiers.push(modifier);
-    }
-  }
+  var modifiers = [];
+  Object.keys(data).forEach(function (category) {
+    data[category].forEach(function (categoryModifier) {
+      modifiers.push({ value: categoryModifier, category: category });
+    });
+  });
   return modifiers;
 }
 

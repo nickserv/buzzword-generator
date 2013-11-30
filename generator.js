@@ -39,6 +39,7 @@ var Generator = {
   },
 
   generate: function (config, string, probability) {
+    string = string || Generator.randomFrom(config.nouns);
     probability = probability || 1;
     if (Generator.randomNumber(probability) === 0) {
       var modifier = Generator.randomFrom(config.modifiers);
@@ -52,7 +53,7 @@ $.getJSON('config.json', function (rawConfig) {
   var config = Config.convert(rawConfig);
 
   function update() {
-    $('.title').html(Generator.generate(config, 'Scrum'));
+    $('.title').html(Generator.generate(config));
   }
 
   $(document).ready(update);

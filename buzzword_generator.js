@@ -56,14 +56,13 @@ function swaggify(modifiers, string, probability) {
   return string;
 }
 
-function generate(modifiers) {
-  $('.title').html(swaggify(modifiers, 'Scrum'));
-}
-
 $.getJSON('modifiers.json', function (data) {
-  var modifiers = loadModifiers(data),
-    generator_thing = function () { generate(modifiers); };
+  var modifiers = loadModifiers(data);
 
-  $(document).ready(generator_thing);
-  $('.more-button').click(generator_thing);
+  function generate() {
+    $('.title').html(swaggify(modifiers, 'Scrum'));
+  }
+
+  $(document).ready(generate);
+  $('.more-button').click(generate);
 });

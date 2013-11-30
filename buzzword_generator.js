@@ -5,15 +5,8 @@ function randomNumber(max) {
 }
 
 Array.prototype.random = function () {
-  var i = randomNumber(this.length);
-  return this[i];
+  return this[randomNumber(this.length)];
 };
-
-function Modifier(value, category) {
-  this.value = value;
-  this.category = category;
-  //console.log(value + "," + category);
-}
 
 function loadModifiers(data) {
   var categories = ['before', 'after', 'prefixes', 'suffixes'],
@@ -25,7 +18,7 @@ function loadModifiers(data) {
   for (i = 0; i < 4; i++) {
     for (j = 0; j < data[categories[i]].length; j++) {
       category = categories[i];
-      modifier = new Modifier(data[category][j], category);
+      modifier = { value: data[category][j], category: category };
       modifiers.push(modifier);
     }
   }
@@ -47,9 +40,7 @@ function decorate(modifiers, string) {
 }
 
 function swaggify(modifiers, string, probability) {
-  if (!probability) {
-    probability = 1;
-  }
+  probability = probability || 1;
   if (randomNumber(probability) === 0) {
     string = swaggify(modifiers, decorate(modifiers, string), probability + 1);
   }

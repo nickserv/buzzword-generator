@@ -2,11 +2,12 @@
 
 var Config = {
   convert: function (rawConfig) {
-    var categories = Object.keys(rawConfig);
+    var modifierCategories = Object.keys(rawConfig.modifiers);
     return {
-      nouns: ['Scrum'],
-      modifiers: categories.reduce(function (memo, category) {
-        var convertedModifiers = rawConfig[category].map(function (modifier) {
+      nouns: rawConfig.nouns,
+
+      modifiers: modifierCategories.reduce(function (memo, category) {
+        var convertedModifiers = rawConfig.modifiers[category].map(function (modifier) {
           return { value: modifier, category: category };
         });
         return memo.concat(convertedModifiers);

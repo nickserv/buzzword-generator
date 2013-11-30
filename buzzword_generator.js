@@ -13,8 +13,7 @@ var Config = {
 };
 
 var Generator = {
-  decorate: function (modifiers, string) {
-    var modifier = Generator.randomFrom(modifiers);
+  decorate: function (string, modifier) {
     switch (modifier.category) {
     case 'before':
       return modifier.value + ' ' + string;
@@ -38,7 +37,8 @@ var Generator = {
   generate: function (modifiers, string, probability) {
     probability = probability || 1;
     if (Generator.randomNumber(probability) === 0) {
-      string = Generator.generate(modifiers, Generator.decorate(modifiers, string), probability + 1);
+      var modifier = Generator.randomFrom(modifiers);
+      string = Generator.generate(modifiers, Generator.decorate(string, modifier), probability + 1);
     }
     return string;
   }

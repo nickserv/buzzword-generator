@@ -1,14 +1,17 @@
 "use strict";
 
 var Config = {
-  convert: function (data) {
-    var categories = Object.keys(data);
-    return categories.reduce(function (memo, category) {
-      var convertedModifiers = data[category].map(function (modifier) {
-        return { value: modifier, category: category };
-      });
-      return memo.concat(convertedModifiers);
-    }, []);
+  convert: function (rawConfig) {
+    var categories = Object.keys(rawConfig);
+    return {
+      nouns: ['Scrum'],
+      modifiers: categories.reduce(function (memo, category) {
+        var convertedModifiers = rawConfig[category].map(function (modifier) {
+          return { value: modifier, category: category };
+        });
+        return memo.concat(convertedModifiers);
+      }, [])
+    };
   }
 };
 
@@ -34,21 +37,21 @@ var Generator = {
     return Math.floor(Math.random() * max);
   },
 
-  generate: function (modifiers, string, probability) {
+  generate: function (config, string, probability) {
     probability = probability || 1;
     if (Generator.randomNumber(probability) === 0) {
-      var modifier = Generator.randomFrom(modifiers);
-      string = Generator.generate(modifiers, Generator.decorate(string, modifier), probability + 1);
+      var modifier = Generator.randomFrom(config.modifiers);
+      string = Generator.generate(config, Generator.decorate(string, modifier), probability + 1);
     }
     return string;
   }
 };
 
-$.getJSON('modifiers.json', function (data) {
-  var modifiers = Config.convert(data);
+$.getJSON('modifiers.json', function (rawConfig) {
+  var config = Config.convert(rawConfig);
 
   function update() {
-    $('.title').html(Generator.generate(modifiers, 'Scrum'));
+    $('.title').html(Generator.generate(config, 'Scrum'));
   }
 
   $(document).ready(update);

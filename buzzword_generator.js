@@ -57,7 +57,7 @@ function swaggify(modifiers, string, probability) {
 }
 
 function generate(modifiers) {
-  $('#title').html(swaggify(modifiers, 'Scrum'));
+  $('.title').html(swaggify(modifiers, 'Scrum'));
 }
 
 $.getJSON('modifiers.json', function (data) {
@@ -65,5 +65,5 @@ $.getJSON('modifiers.json', function (data) {
     generator_thing = function () { generate(modifiers); };
 
   $(document).ready(generator_thing);
-  $('#more-button').click(generator_thing);
+  $('.more-button').click(generator_thing);
 });

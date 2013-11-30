@@ -9,13 +9,13 @@ Array.prototype.random = function () {
 };
 
 function loadModifiers(data) {
-  var modifiers = [];
-  Object.keys(data).forEach(function (category) {
-    data[category].forEach(function (categoryModifier) {
-      modifiers.push({ value: categoryModifier, category: category });
+  var categories = Object.keys(data);
+  return categories.reduce(function (memo, category) {
+    var convertedModifiers = data[category].map(function (modifier) {
+      return { value: modifier, category: category };
     });
-  });
-  return modifiers;
+    return memo.concat(convertedModifiers);
+  }, []);
 }
 
 function decorate(modifiers, string) {

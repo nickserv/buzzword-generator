@@ -48,7 +48,7 @@ var Generator = {
   }
 };
 
-$.getJSON('modifiers.json', function (rawConfig) {
+$.getJSON('config.json', function (rawConfig) {
   var config = Config.convert(rawConfig);
 
   function update() {

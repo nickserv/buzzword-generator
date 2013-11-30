@@ -40,7 +40,20 @@
     "LAMP",
     "Coupling",
     "Cohesion",
-    "Engineering"
+    "Engineering",
+    "Sieve",
+    "Composite",
+    "Borg",
+    "Pattern",
+    "Log",
+    "Lambda",
+    "ASCII",
+    "Unicode",
+    "Practice",
+    "Commit",
+    "API",
+    "Performance",
+    "Sort"
   ],
   "modifiers": {
     "before": [
@@ -65,7 +78,22 @@
       "Computer",
       "Software",
       "Network",
-      "Secure"
+      "Secure",
+      "Prime",
+      "Architectural",
+      "Design",
+      "Quantum",
+      "Parallel",
+      "Concurrent",
+      "Distributed",
+      "Esoteric",
+      "Bogo",
+      "Smooth",
+      "Quick",
+      "Merge",
+      "Bubble",
+      "Tim",
+      "Turing Complete"
     ],
     "after": [
       "on Rails",
@@ -92,10 +120,23 @@
       "Pattern",
       "Problem",
       "SQL",
-      "Management"
+      "Management",
+      "Operator",
+      "Builder",
+      "Command",
+      "OS",
+      "Bug",
+      "Error",
+      "Fault",
+      "Failure",
+      "Compiler",
+      "Pipeline",
+      "Escape",
+      "Regex"
     ],
     "prefixes": [
-      "i"
+      "i",
+      "Anti-"
     ],
     "suffixes": [
       ".js",

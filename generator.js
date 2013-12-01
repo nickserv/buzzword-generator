@@ -50,12 +50,18 @@ var Generator = {
 };
 
 $.getJSON('config.json', function (rawConfig) {
-  var config = Config.convert(rawConfig);
+  var config = Config.convert(rawConfig),
+    spaceKey = 32;
 
   function update() {
     $('.title').html(Generator.generate(config));
   }
 
-  $(document).ready(update);
+  $(document).ready(update)
+    .keypress(function (event) {
+      if (event.which === spaceKey) {
+        update();
+      }
+    });
   $('.more-button').click(update);
 });

@@ -2,10 +2,9 @@
 
 [![Code Climate](https://codeclimate.com/github/thenickperson/buzzword-generator.png)](https://codeclimate.com/github/thenickperson/buzzword-generator)
 
-## About
 Produces amusing buzzword phrases.
 
-## Hacking
+## Contributing
 If you would like to contribute to the generator (even if you only want to
 add content), feel free to fork this repository and send me a pull request.
 

@@ -1,4 +1,4 @@
-# [buzzword-generator](http://thenickperson.github.com/buzzword-generator/)
+# [buzzword-generator](http://thenickperson.com/buzzword-generator/)
 
 [![Code Climate](https://codeclimate.com/github/thenickperson/buzzword-generator.png)](https://codeclimate.com/github/thenickperson/buzzword-generator)
 

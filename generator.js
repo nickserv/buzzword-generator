@@ -69,5 +69,7 @@ $.getJSON('config.json', function (rawConfig) {
       update();
     }
   });
-  $('.more-button').click(update);
+  $('.more-button').click(function () {
+    update();
+  });
 });

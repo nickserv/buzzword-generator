@@ -19,6 +19,9 @@
     "Engineering",
     "Factory",
     "Forming",
+    "Gang of Four",
+    "Gold Plating",
+    "Golden Hammer",
     "Grooming",
     "Hacker News",
     "IDE",
@@ -42,6 +45,7 @@
     "Risk",
     "Scrum",
     "Sieve",
+    "Silver Bullet",
     "Singleton",
     "Sort",
     "Sprint",
@@ -55,7 +59,8 @@
     "Venture Capital",
     "Version Control",
     "WYSIWYG",
-    "Waterfall"
+    "Waterfall",
+    "XP"
   ],
   "modifiers": {
     "before": [
@@ -120,6 +125,7 @@
       "Management",
       "Master",
       "Method",
+      "Mitigation",
       "Model",
       "OS",
       "Operator",

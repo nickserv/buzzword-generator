@@ -53,15 +53,27 @@ $.getJSON('config.json', function (rawConfig) {
   var config = Config.convert(rawConfig),
     spaceKey = 32;
 
-  function update() {
-    $('.title').html(Generator.generate(config));
+  function update(text) {
+    text = text || Generator.generate(config);
+
+    $('.title').html(text);
+    document.title = 'Buzzword Generator - ' + text;
+    history.replaceState({}, 'Buzzword Generator', encodeURI("/?text=" + text));
   }
 
-  $(document).ready(update)
-    .keypress(function (event) {
-      if (event.which === spaceKey) {
-        update();
-      }
-    });
-  $('.more-button').click(update);
+  $(document).ready(function () {
+    var textParam = $.url(window.location).param('text');
+    if (textParam) {
+      update(textParam);
+    } else {
+      update();
+    }
+  }).keypress(function (event) {
+    if (event.which === spaceKey) {
+      update();
+    }
+  });
+  $('.more-button').click(function () {
+    update();
+  });
 });

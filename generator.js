@@ -54,7 +54,10 @@ $.getJSON('config.json', function (rawConfig) {
     spaceKey = 32;
 
   function update(text) {
-    $('.title').html(text || Generator.generate(config));
+    var text = text || Generator.generate(config);
+
+    $('.title').html(text);
+    history.replaceState({}, 'Buzzword Generator', encodeURI("/?text=" + text));
   }
 
   $(document).ready(function () {

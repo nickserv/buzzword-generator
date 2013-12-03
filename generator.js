@@ -54,7 +54,10 @@ $.getJSON('config.json', function (rawConfig) {
     spaceKey = 32;
 
   function update() {
-    $('.title').html(Generator.generate(config));
+    var text = Generator.generate(config);
+
+    $('.title').html(text);
+    document.title = 'Buzzword Generator - ' + text;
   }
 
   $(document).ready(update)

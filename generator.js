@@ -57,6 +57,7 @@ $.getJSON('config.json', function (rawConfig) {
     text = text || Generator.generate(config);
 
     $('.title').html(text);
+    document.title = 'Buzzword Generator - ' + text;
     history.replaceState({}, 'Buzzword Generator', encodeURI("/?text=" + text));
   }
 

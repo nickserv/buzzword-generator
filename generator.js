@@ -53,18 +53,18 @@ $.getJSON('config.json', function (rawConfig) {
   var config = Config.convert(rawConfig),
     spaceKey = 32;
 
-  function update(text) {
-    text = text || Generator.generate(config);
+  function update(quote) {
+    quote = quote || Generator.generate(config);
 
-    $('.title').html(text);
-    document.title = 'Buzzword Generator - ' + text;
-    history.replaceState({}, 'Buzzword Generator', encodeURI("/?text=" + text));
+    $('.title').html(quote);
+    document.title = 'Buzzword Generator - ' + quote;
+    history.replaceState({}, 'Buzzword Generator', encodeURI("/?quote=" + quote));
   }
 
   $(document).ready(function () {
-    var textParam = $.url(window.location).param('text');
-    if (textParam) {
-      update(textParam);
+    var quoteParam = $.url(window.location).param('quote');
+    if (quoteParam) {
+      update(quoteParam);
     } else {
       update();
     }

@@ -54,11 +54,13 @@ $.getJSON('config.json', function (rawConfig) {
     spaceKey = 32;
 
   function update(quote) {
+    var pageTitle;
     quote = quote || Generator.generate(config);
+    pageTitle = 'Buzzword Generator - ' + quote;
 
     $('.title').html(quote);
-    document.title = 'Buzzword Generator - ' + quote;
-    history.replaceState({}, 'Buzzword Generator', '?quote=' + encodeURIComponent(quote));
+    document.title = pageTitle;
+    history.replaceState({}, pageTitle, '?quote=' + encodeURIComponent(quote));
   }
 
   $(document).ready(function () {

@@ -1,4 +1,4 @@
-# [Buzzword Generator](http://nickmccurdy.com/buzzword-generator/)
+# [Buzzword Generator](https://nickmccurdy.com/buzzword-generator/)
 
 [![Code Climate](https://codeclimate.com/github/thenickperson/buzzword-generator.png)](https://codeclimate.com/github/thenickperson/buzzword-generator)
 
